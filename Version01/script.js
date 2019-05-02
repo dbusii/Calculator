@@ -9,18 +9,83 @@ let subOp = false
 let multiOp = false
 let diviOp = false
 
-function nineToScreen(){
+
+document.addEventListener('keydown', logkey)
+
+function logkey(e) {
+        let eventCode = e.code
+        console.log(eventCode)        
+        if (eventCode === "Digit1" || eventCode === "Numpad1") {
+                oneToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit2" || eventCode === "Numpad2") {
+                twoToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit3" || eventCode === "Numpad3") {
+                threeToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit4" || eventCode === "Numpad4") {
+                fourToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit5" || eventCode === "Numpad5") {
+                fiveToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit6" || eventCode === "Numpad6") {
+                sixToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit7" || eventCode === "Numpad7") {
+                sevenToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit8" || eventCode === "Numpad8") {
+                eightToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit9" || eventCode === "Numpad9") {
+                nineToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Digit0" || eventCode === "Numpad0") {
+                zeroToScreen() 
+                eventCode = "" 
+        } else if (eventCode === "Equal" || eventCode === "NumpadAdd") {
+               plus() 
+                eventCode = "" 
+        } else if (eventCode === "Minus" || eventCode === "NumpadSubtract") {
+                subtract() 
+                 eventCode = "" 
+        } else if (eventCode === "Slash" || eventCode === "NumpadDivide") {
+                divi() 
+                eventCode = "" 
+        } else if (eventCode === "keyX" || eventCode === "NumpadMultiply") {
+                multi() 
+                eventCode = "" 
+        } else if (eventCode === "Enter" || eventCode === "NumpadEnter") {
+               equals() 
+                 eventCode = "" 
+         } else if (eventCode === "KeyC" || eventCode === "Delete" || eventCode === "Escape") {
+                clearScreen() 
+                  eventCode = "" 
+          } else if (eventCode === "Backspace") {
+                delChar() 
+                  eventCode = "" 
+          }
+}
+function delChar(){
         if (plusOp === false && subOp === false && multiOp === false && diviOp === false) {
-        num1.push(9)
+        num1.pop()
         document.getElementById("screen").innerHTML = num1.join("");
    
         console.log(num1)
         }
         else {
-        num2.push(9)
+        num2.pop()
         document.getElementById("screen").innerHTML = num2.join("");
         console.log(num2)
         }
+
+
+}
+
+function nineToScreen(){
+
 }
 
 function eightToScreen(){
@@ -148,6 +213,19 @@ function zeroToScreen(){
         }
 }
 
+function decimal(){
+        if (plusOp === false && subOp === false && multiOp === false && diviOp === false) {
+        num1.push(".")
+        document.getElementById("screen").innerHTML = num1.join("");
+   
+        console.log(num1)
+        }
+        else {
+        num2.push(".")
+        document.getElementById("screen").innerHTML = num2.join("");
+        console.log(num2)
+        }
+}
 
 
 function plus(){
@@ -195,7 +273,7 @@ function divi(){
 
 function equals(){
         if (plusOp === true){
-                if (num2.length === 0) { num3 = parseInt(num1.join("")) + 0 } else {num3 = parseInt(num1.join("")) + parseInt(num2.join("")) } 
+                if (num2.length === 0) { num3 = parseFloat(num1.join("")) + 0 } else {num3 = parseFloat(num1.join("")) + parseFloat(num2.join("")) } 
                 num2 = []
                 num1 = []
                 num1.push(num3)
@@ -203,7 +281,7 @@ function equals(){
                 console.log(num3)
         }
         if (subOp === true){
-                if (num2.length === 0) { num3 = parseInt(num1.join("")) - 0 } else {num3 = parseInt(num1.join("")) - parseInt(num2.join("")) } 
+                if (num2.length === 0) { num3 = parseFloat(num1.join("")) - 0 } else {num3 = parseFloat(num1.join("")) - parseFloat(num2.join("")) } 
                 num2 = []
                 num1 = []
                 num1.push(num3)
@@ -211,7 +289,7 @@ function equals(){
                 console.log(num3)
         }
         if (multiOp === true){
-                if (num2.length === 0) { num3 = parseInt(num1.join("")) * 0 } else {num3 = parseInt(num1.join("")) * parseInt(num2.join("")) } 
+                if (num2.length === 0) { num3 = parseFloat(num1.join("")) * 0 } else {num3 = parseFloat(num1.join("")) * parseFloat(num2.join("")) } 
                 num2 = []
                 num1 = []
                 num1.push(num3)
@@ -219,7 +297,7 @@ function equals(){
                 console.log(num3)
         }
         if (diviOp === true){
-                if (num2.length === 0) { num3 = parseInt(num1.join("")) / 0 } else {num3 = parseInt(num1.join("")) / parseInt(num2.join("")) } 
+                if (num2.length === 0) { num3 = parseFloat(num1.join("")) / 0 } else {num3 = parseFloat(num1.join("")) / parseFloat(num2.join("")) } 
                 num2 = []
                 num1 = []
                 num1.push(num3)
