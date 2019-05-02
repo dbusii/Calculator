@@ -85,7 +85,17 @@ function delChar(){
 }
 
 function nineToScreen(){
-
+        if (plusOp === false && subOp === false && multiOp === false && diviOp === false) {
+                num1.push(9)
+                document.getElementById("screen").innerHTML = num1.join("");
+           
+                console.log(num1)
+                }
+                else {
+                num2.push(9)
+                document.getElementById("screen").innerHTML = num2.join("");
+                console.log(num2)
+                }
 }
 
 function eightToScreen(){
