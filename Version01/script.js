@@ -66,7 +66,10 @@ function logkey(e) {
           } else if (eventCode === "Backspace") {
                 delChar() 
                   eventCode = "" 
-          }
+          } else if (eventCode === "NumpadDecimal") {
+            decimal() 
+              eventCode = "" 
+      }
 }
 function delChar(){
         if (plusOp === false && subOp === false && multiOp === false && diviOp === false) {

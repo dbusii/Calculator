@@ -1,42 +1,42 @@
-#myCalc{
-    width: 100%;
-    border-style: solid;
-    border-width: 2px;
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: .5rem;
+    height: 96vh;
+}
+
+
+.screenDiv{
+    grid-row: 1 / 1;
+    grid-column: 2 / 5; 
+    background-color: #f1f1f1 ;
+    min-height: 5rem;  
+    height: 1fr;
     border-radius: 1vh;
-    border-color: #c6c6c6;
 }
 #screen{
-    text-align: center;
-    resize: none;
-    border-radius: 1vh;
-    background-color: #e8e8e8;
-    border:none;
-    margin: 1vw;
-    padding: 2vw;
-    min-width: 250px;
-    width: 89%;
-    min-height: 50px;
-    height: 10vh;
-    border: #9ed2fa;
+    padding-right: 1.5rem;
+    height:100%;
+    font-size: 1.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 8vh;
     font-weight: lighter;
     text-align: right;
     cursor: default;
 }
-.buts {
-    min-height: 50px;
-    height: 15vh;
-    min-width: 30px;
-    width: 16%;
-    background-color: #ededed;
-    color: black;    
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 3vh;
-    font-weight: lighter;
+
+.buttons{
+    width:1fr;
+    height:1fr;
+}
+
+.buts{
+    width: 100%;
+    height: 100%;
     border-radius: 1vh;
     border:none;
-    margin: 1vw;
+    background-color: #f1f1f1 ;  
 }
 
 .buts:hover {
@@ -45,7 +45,7 @@
 }
 
 .operator {
-    background-color:#cdcdcd;
+    background-color:lightgray;
 }
 
 .operator:hover {
@@ -56,5 +56,5 @@
 }
 
 #equal:hover {
-    background-color:#9ed2fa;
+    background-color:#82bded;
 }
