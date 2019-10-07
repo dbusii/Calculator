@@ -6,6 +6,8 @@ class Number{
 }
 
 let currentNumber = new Number('')
+let num1 = new Number('')
+let num2 = new Number('')
 let answer = new Number('')
 window.mem = false
 
@@ -25,6 +27,7 @@ $( ".operator" ).click(function() {
 		equals()
 	} else {
 		$('.screen').html('0')
+		num1.digits = currentNumber.digits
 		answer.digits = currentNumber.digits
 		currentNumber.digits = ""
 	}
@@ -51,6 +54,8 @@ function clear(){
 
 function equals() {
 
+	num2.digits = currentNumber.digits
+
 	switch(answer.operator){
 	case '+':
 		answer.digits = parseFloat(answer.digits) + parseFloat(currentNumber.digits)
@@ -71,7 +76,16 @@ function equals() {
 
 	currentNumber.digits = ""
 	console.log(`answer = ${answer.digits}`)
+
 	$('.screen').html(answer.digits)
+
+	$('.num1').html(num1.digits)
+	$('.op').html(answer.operator)
+	$('.num2').html(num2.digits)
+	$('.ans').html(`= ${answer.digits}`)
+
+	num1.digits = num2.digits
+	console.log(num1.digits)
 
 }
 
