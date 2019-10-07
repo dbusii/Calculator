@@ -69,6 +69,15 @@ function equals() {
 	case '/':
 		answer.digits = parseFloat(answer.digits) / parseFloat(currentNumber.digits)
 		break
+	case '^':
+		answer.digits = parseFloat(answer.digits) ** parseFloat(currentNumber.digits)
+		break
+	case '%':
+		answer.digits = parseFloat(answer.digits) % parseFloat(currentNumber.digits)
+		break
+	case 'sqrt':
+		answer.digits =Math.sqrt( parseFloat( (answer.digits)  ) ) 
+		break
 	default:
 		console.log('no operator selected')
 		break
@@ -86,6 +95,5 @@ function equals() {
 
 	num1.digits = num2.digits
 	console.log(num1.digits)
-
 }
 
