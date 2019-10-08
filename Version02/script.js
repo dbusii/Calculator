@@ -57,6 +57,10 @@ function clear(){
 	answer.digits = ""
 	nextSum = false
 	answer.operator = ""
+	$('.num1').html(`&nbsp;`)
+	$('.op').html("")
+	$('.num2').html("")
+	$('.ans').html("")
 }
 
 function equals() {

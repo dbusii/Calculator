@@ -14,6 +14,7 @@
 .screen{
     text-align: right;
     font-size: 32px;
+
 }
 
 .display{
@@ -22,6 +23,9 @@
     border: 1px solid grey;
     border-radius: 4px;
     margin:16px 0 8px 0;
+    overflow: auto;
+
+  
 }
 
 .sum{
@@ -36,12 +40,6 @@
     font-size: 14px !important;
     border-radius: 4px !important;
 }
-/* 
-@media only screen and (max-width: 600px) {
-    .btn{
-        height: 14vh !important;
-    }
-} */
 
 .btn-group.btn-row {
     display: flex;
