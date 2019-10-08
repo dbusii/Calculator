@@ -2,12 +2,24 @@
     background-color: #f1f3f4 !important;
 }
 
+.but:hover{
+    background-color: #e8eaeb!important;
+}
+
 .operator, .clear, .pi{
     background-color: #dfe1e5 !important;
 }
 
+.operator:hover, .clear:hover, .pi:hover{
+    background-color: #d7d9dd !important;
+}
+
 .equals{
     background-color: #3c7afc !important;
+}
+
+.equals:hover{
+    background-color: #4782f9 !important;
 }
 
 
@@ -34,11 +46,15 @@
     padding-right: 40px;
 }
 
+.equals{
+    color: #ffffff !important;
+}
 
 .btn{
     height: 15.4vh;
     font-size: 14px !important;
     border-radius: 4px !important;
+    font-size: 24px !important;
 }
 
 .btn-group.btn-row {
