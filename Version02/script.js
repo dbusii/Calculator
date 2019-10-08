@@ -2,6 +2,7 @@ class Number{
 	constructor(digits,){
 		this.digits = digits
 		this.operator = ""
+		this.modifier = ""
 	}
 }
 
@@ -9,7 +10,7 @@ let currentNumber = new Number('')
 let num1 = new Number('')
 let num2 = new Number('')
 let answer = new Number('')
-window.mem = false
+window.nextSum = false
 
 $( ".but" ).click(function() {
 	currentNumber.digits += $(this).val()
@@ -20,9 +21,9 @@ $( ".operator" ).click(function() {
 
 	answer.operator = $(this).val()
 
-	if (mem === true && currentNumber.digits.length === 0){
+	if (nextSum === true && currentNumber.digits.length === 0){
 		$('.screen').html('0')
-	} else if (mem === true){
+	} else if (nextSum === true){
 		$('.screen').html(answer.digits)
 		equals()
 	} else {
@@ -32,8 +33,14 @@ $( ".operator" ).click(function() {
 		currentNumber.digits = ""
 	}
 
-	mem = true
+	nextSum = true
 });
+
+$( ".pi" ).click(function() {
+	currentNumber.digits += Math.PI
+	$('.screen').html(currentNumber.digits.substring(0,4))
+});
+
 
 $( ".equals" ).click(function() {
 	equals()
@@ -48,7 +55,7 @@ function clear(){
 	$('.screen').html('0')
 	currentNumber.digits = ""
 	answer.digits = ""
-	mem = false
+	nextSum = false
 	answer.operator = ""
 }
 
@@ -84,15 +91,11 @@ function equals() {
 	}
 
 	currentNumber.digits = ""
-	console.log(`answer = ${answer.digits}`)
-
 	$('.screen').html(answer.digits)
-
 	$('.num1').html(num1.digits)
 	$('.op').html(answer.operator)
 	$('.num2').html(num2.digits)
 	$('.ans').html(`= ${answer.digits}`)
-
 	num1.digits = num2.digits
 	console.log(num1.digits)
 }
